@@ -7,9 +7,9 @@ from medusa.vyper.vyper_compile import get_vyper_ast
 def extract_errors(analysis: dict[str, set[vy_ast.VyperNode]]) -> dict[str, int]:
     ret = {}
 
-    for analysis_type, errors_flagged in analysis.items():
+    for analyser, errors_flagged in analysis.items():
         error_count = len(errors_flagged)
-        ret[analysis_type] = error_count
+        ret[str(analyser)] = error_count
 
     return ret
 

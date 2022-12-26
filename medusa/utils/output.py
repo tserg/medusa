@@ -11,10 +11,10 @@ Total number of errors: {total_count}\n
 ------------------------------------\n
     """
 
-    for analysis_type, errors_flagged in analysis.items():
+    for analyser, errors_flagged in analysis.items():
         formatted_errors = "\n\n".join([str(e) for e in errors_flagged])
         output += f"""
-Analysis type: {analysis_type}
+Analysis type: {str(analyser)}
 
 {formatted_errors}
 ------------------------------------\n

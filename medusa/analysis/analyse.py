@@ -13,6 +13,4 @@ def analyse(ast: vy_ast.Module) -> dict[BaseAnalyser, set[vy_ast.VyperNode]]:
         analyser = v()
         analyser.analyse(ast, analysis)
 
-    print("analysis: ", analysis)
-
     return analysis
