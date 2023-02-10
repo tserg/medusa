@@ -11,7 +11,6 @@ __doc__ = """Usage: medusa <command> [<args>...] [options <args>]
 Commands:
   transform             Print the Vyper AST to console.
   analyse               Analyse Vyper code.
-  test                  Run test cases in the tests/ folder.
 
 Options:
   --help -h             Display this message.
