@@ -30,7 +30,7 @@ class UnusedParamAnalyser(BaseAnalyser):
             for arg_node in fn_params:
                 arg_name = arg_node.arg
 
-                # Check for uses
+                # Check for uses but exclude those under a namespace
                 arg_name_references = [
                     ref
                     for ref in fn_node.get_descendants(vy_ast.Name, {"id": arg_name})
