@@ -1,6 +1,6 @@
 # Medusa
 
-Performs AST traversal to catch non-critical improvements in your Vyper code:
+Performs AST traversal to catch non-critical improvements for your Vyper code:
 1. Unused local variables
 2. Unused function parameters
 
