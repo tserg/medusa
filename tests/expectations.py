@@ -8,4 +8,7 @@ EXPECTED = [
     ("unused_param/double_alt", {"Unused Function Parameter": 1}),
     ("unused_param/namespace_single", {"Unused Function Parameter": 1}),
     ("unused_param/nested_namespace_single", {"Unused Function Parameter": 1}),
+    ("unused_import/erc20_implement_pass", {}),
+    ("unused_import/erc20_use_pass", {}),
+    ("unused_import/erc20_fail", {"Unused Import": 1}),
 ]
