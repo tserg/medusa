@@ -24,7 +24,7 @@ setup(
     keywords=["ethereum", "vyper", "analyzer"],
     python_requires=">=3.10,<3.11",
     packages=find_packages(where=".", include=["medusa*"]),
-    install_requires=["vyper==0.3.7"],
+    install_requires=["vyper==0.3.9"],
     extras_require=extras_require,
     entry_points={"console_scripts": ["medusa=medusa._cli.__main__:main"]},
 )
