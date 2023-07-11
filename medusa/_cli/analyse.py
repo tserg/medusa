@@ -31,6 +31,7 @@ def main():
         output_dict = analyse(vyper_ast)
         formatted_analysis = format_analysis(output_dict)
 
+        # Write to output file
         if output_file := args["--output"]:
             write_analysis(formatted_analysis, output_file)
 
