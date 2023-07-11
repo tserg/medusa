@@ -36,7 +36,7 @@ class UnusedParamAnalyser(BaseAnalyser):
                     for ref in fn_node.get_descendants(vy_ast.Name, {"id": arg_name})
                     if not isinstance(ref.get_ancestor, vy_ast.Attribute)
                 ]
-                if len(arg_name_references) == 0:
+                if not arg_name_references:
                     temp = analysis.get(self, set())
                     temp.add(arg_node)
                     analysis[self] = temp
