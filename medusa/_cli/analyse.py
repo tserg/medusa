@@ -32,8 +32,7 @@ def main():
         formatted_analysis = format_analysis(output_dict)
 
         # Write to output file
-        output_file = args["--output"]
-        if output_file:
+        if output_file := args["--output"]:
             write_analysis(formatted_analysis, output_file)
 
         # Print analysis to console

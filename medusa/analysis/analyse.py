@@ -9,7 +9,7 @@ PASSES = {"Dead Store": DeadStoreAnalyser, "Unused Function Parameter": UnusedPa
 def analyse(ast: vy_ast.Module) -> dict[BaseAnalyser, set[vy_ast.VyperNode]]:
     analysis: dict[BaseAnalyser, set[vy_ast.VyperNode]] = {}
 
-    for k, v in PASSES.items():
+    for v in PASSES.values():
         analyser = v()
         analyser.analyse(ast, analysis)
 

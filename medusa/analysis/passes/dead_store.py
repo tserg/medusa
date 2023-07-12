@@ -37,7 +37,7 @@ class DeadStoreAnalyser(BaseAnalyser):
                     if i != name_node
                 ]
 
-                if len(used_by) == 0:
+                if not used_by:
                     temp = analysis.get(self, set())
                     temp.add(local_var)
                     analysis[self] = temp
