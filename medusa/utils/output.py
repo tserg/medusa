@@ -24,5 +24,5 @@ Analysis type: {str(analyser)}
 
 
 def write_analysis(analysis: str, file_name: str):
-    f = open(file_name, "w")
-    f.write(analysis)
+    with open(file_name, "w") as fh:
+        fh.write(analysis)
