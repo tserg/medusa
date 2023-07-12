@@ -12,13 +12,17 @@ Prints the Vyper AST to console
 """
 
 
-def main():
+def main() -> int:
     args = docopt(__doc__)
 
-    if args["<contract>"]:
-        path = args["<contract>"]
+    if not args["<contract>"]:
+        return 1
 
-        # Get Vyper AST
-        vyper_ast = get_vyper_ast(path)
-        ast_dict = vyper_ast.to_dict()
-        print(json.dumps(ast_dict, indent=4, sort_keys=True))
+    path = args["<contract>"]
+
+    # Get Vyper AST
+    vyper_ast = get_vyper_ast(path)
+    ast_dict = vyper_ast.to_dict()
+    print(json.dumps(ast_dict, indent=4, sort_keys=True))
+
+    return 0

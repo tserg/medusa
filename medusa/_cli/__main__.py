@@ -44,7 +44,7 @@ def main():
     sys.tracebacklimit = 1000
 
     try:
-        importlib.import_module(f"medusa._cli.{cmd}").main()
+        sys.exit(importlib.import_module(f"medusa._cli.{cmd}").main())
     except Exception as e:
         tb_item = sys.exc_info()[2]
         traceback.print_tb(tb_item)
