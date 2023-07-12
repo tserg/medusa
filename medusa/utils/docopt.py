@@ -317,11 +317,7 @@ class Option(LeafPattern):
 
     def single_match(self, left: List[LeafPattern]) -> TSingleMatch:
         return next(
-            (
-                (n, pattern)
-                for n, pattern in enumerate(left)
-                if self.name == pattern.name
-            ),
+            ((n, pattern) for n, pattern in enumerate(left) if self.name == pattern.name),
             (None, None),
         )
 
@@ -672,11 +668,7 @@ def parse_section(name: str, source: str) -> List[str]:
     pattern = re.compile(
         "^([^\n]*" + name + "[^\n]*\n?(?:[ \t].*?(?:\n|$))*)", re.IGNORECASE | re.MULTILINE
     )
-    return [
-        s.strip()
-        for s in pattern.findall(source)
-        if s.strip().lower() != name.lower()
-    ]
+    return [s.strip() for s in pattern.findall(source) if s.strip().lower() != name.lower()]
 
 
 def formal_usage(section: str) -> str:

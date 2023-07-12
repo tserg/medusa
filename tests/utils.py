@@ -5,10 +5,7 @@ from medusa.vyper.vyper_compile import get_vyper_ast
 
 
 def extract_errors(analysis: dict[str, set[vy_ast.VyperNode]]) -> dict[str, int]:
-    return {
-        str(analyser): len(errors_flagged)
-        for analyser, errors_flagged in analysis.items()
-    }
+    return {str(analyser): len(errors_flagged) for analyser, errors_flagged in analysis.items()}
 
 
 def get_contract_analysis(path: str) -> dict[str, int]:
