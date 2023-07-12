@@ -22,7 +22,7 @@ setup(
     author_email="",
     url="https://github.com/tserg/medusa",
     keywords=["ethereum", "vyper", "analyzer"],
-    python_requires=">=3.10,<3.11",
+    python_requires=">=3.10,<3.12",
     packages=find_packages(where=".", include=["medusa*"]),
     install_requires=["vyper==0.3.9"],
     extras_require=extras_require,
