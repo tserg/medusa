@@ -17,26 +17,28 @@ Analyses the Vyper source file
 """
 
 
-def main():
+def main() -> int:
     args = docopt(__doc__)
 
-    if args["<contract>"]:
-        path = args["<contract>"]
-        print_output = args["--print-output"]
+    if not (path := args["<contract>"]):
+        return 1
 
-        # Get Vyper AST
-        vyper_ast = get_vyper_ast(path)
+    print_output = args["--print-output"]
 
-        # Perform analysis and format the result as a string
-        output_dict = analyse(vyper_ast)
-        formatted_analysis = format_analysis(output_dict)
+    # Get Vyper AST
+    vyper_ast = get_vyper_ast(path)
 
-        # Write to output file
-        if output_file := args["--output"]:
-            write_analysis(formatted_analysis, output_file)
+    # Perform analysis and format the result as a string
+    output_dict = analyse(vyper_ast)
+    formatted_analysis = format_analysis(output_dict)
 
-        # Print analysis to console
-        if print_output:
-            print(formatted_analysis)
+    # Write to output file
+    if output_file := args["--output"]:
+        write_analysis(formatted_analysis, output_file)
 
-        print(f"\nSuccessfully analysed {path}!")
+    # Print analysis to console
+    if print_output:
+        print(formatted_analysis)
+
+    print(f"\nSuccessfully analysed {path}!")
+    return int(bool(output_dict))
